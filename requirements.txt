@@ -1,0 +1,7 @@
+jieba
+sqlite3
+configparser
+lxml
+flask
+selenium
+bs4
