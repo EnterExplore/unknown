@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-# 清理乱码新闻
 
 import os
 import xml.etree.ElementTree as ET
@@ -15,7 +14,6 @@ files = os.listdir(folder)
 
 files = sorted(files, key=lambda x: int(os.path.splitext(x)[0]))
 
-keyword = '编辑'
 
 i = 1
 for j, file in enumerate(files):
