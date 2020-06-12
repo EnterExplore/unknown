@@ -15,11 +15,6 @@ from datetime import *
 
 user_agent = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64)'
 headers = {'User-Agent': user_agent}
-# values = {'name': 'Michael Foord',
-#          'location': 'Northampton',
-#          'language': 'Python' }
-# data = urllib.parse.urlencode(values)
-# data = data.encode('ascii')
 
 keyword = '编辑'
 
@@ -128,7 +123,7 @@ def crawl_news(news_pool, min_body_len, doc_dir_path, doc_encoding):
             body += '\t' + cur + '\n'
         body = body.replace(" ", "")
 
-        if keyword not in body:  # 过滤掉乱码新闻
+        if keyword not in body:  
             continue
 
         if len(body) <= min_body_len:
@@ -165,8 +160,8 @@ if __name__ == '__main__':
     im = IndexModule('../config.ini', 'utf-8')
     im.construct_postings_lists()
 
-    # 推荐阅读
-    """print('-----start recommending time: %s-----' % (datetime.today()))
+    """推荐阅读
+    print('-----start recommending time: %s-----' % (datetime.today()))
     rm = RecommendationModule('../config.ini', 'utf-8')
     rm.find_k_nearest(5, 25)
     print('-----finish time: %s-----' % (datetime.today()))
